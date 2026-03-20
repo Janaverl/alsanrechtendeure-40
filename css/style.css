@@ -24,11 +24,11 @@ body > * {
 h1 {
   color: #AD1457;
   font-family: logoFont;
-  font-size: 44px;
+  font-size: 33px;
 }
 @media (min-width: 1900px) {
   h1 {
-    font-size: 66px;
+    font-size: 55px;
   }
 }
 h1 {
