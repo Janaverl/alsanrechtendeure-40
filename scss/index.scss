@@ -83,15 +83,15 @@ div.project{
 // end of box shadows for the projects
 
 .project{
-    background-color: $bgTwo;
+    background-color: $bgOne;
     &.socialrun{
         background-color: $bgTwo;
     }
     &.break{
-        background-color: $bgTwo;
+        background-color: $bgOne;
     }
     &.food{
-        background-color: $bgTwo;
+        background-color: $bgOne;
     }
     .content{
         height: 100%;
@@ -105,11 +105,13 @@ div.project{
         display: flex;
         justify-content: space-between;
         .summary{
+            width: 100%;
             .title{
                 min-height: 150px;
             }
             h4{
                 margin-bottom: 15px;
+                text-align: center;
             }
             h5{
                 margin-bottom: 15px;

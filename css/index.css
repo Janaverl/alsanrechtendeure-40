@@ -161,16 +161,16 @@ div.project:hover {
 }
 
 .project {
-  background-color: #9DB17C;
+  background-color: #F2E8D8;
 }
 .project.socialrun {
-  background-color: #9DB17C;
+  background-color: #DCCBB5;
 }
 .project.break {
-  background-color: #9DB17C;
+  background-color: #F2E8D8;
 }
 .project.food {
-  background-color: #9DB17C;
+  background-color: #F2E8D8;
 }
 .project .content {
   height: 100%;
@@ -196,11 +196,15 @@ div.project:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.project .discription .summary {
+  width: 100%;
+}
 .project .discription .summary .title {
   min-height: 150px;
 }
 .project .discription .summary h4 {
   margin-bottom: 15px;
+  text-align: center;
 }
 .project .discription .summary h5 {
   margin-bottom: 15px;

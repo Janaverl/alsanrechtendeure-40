@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(){
-    // var hamburgerButton = document.querySelector('.hamburger');
-    // var navbar = document.querySelector('.navbar');
+    var hamburgerButton = document.querySelector('.hamburger');
+    var navbar = document.querySelector('.navbar');
 
-    // hamburgerButton.addEventListener('click', openMobile);
-    // navbar.addEventListener('click', closeMobile);
+    hamburgerButton.addEventListener('click', openMobile);
+    navbar.addEventListener('click', closeMobile);
 
-    // function openMobile(){
-    //     navbar.classList.add('open');
-    // }
+    function openMobile(){
+        navbar.classList.add('open');
+    }
 
-    // function closeMobile(){
-    //     navbar.classList.remove('open');
-    // }
+    function closeMobile(){
+        navbar.classList.remove('open');
+    }
 
     //Get the button:
     mybutton = document.querySelector('.goUp');
