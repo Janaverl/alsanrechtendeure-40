@@ -15,5 +15,16 @@ $bgFour: #D9E3D2;
 // $bgThree: #9CDE9F;
 // $bgFour: #D1F5BE;
 
-$font: 'Abhaya Libre', serif;
-$logofont: 'Poppins', cursive;
+
+@font-face {
+  font-family: logoFont;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/Abhaya_Libre/AbhayaLibre-Regular.ttf);
+}
+
+$font: mainFont;
+$logofont: logoFont;

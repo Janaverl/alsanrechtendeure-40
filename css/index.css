@@ -1,3 +1,11 @@
+@font-face {
+  font-family: logoFont;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/Abhaya_Libre/AbhayaLibre-Regular.ttf);
+}
 .hero {
   position: relative;
   display: -webkit-box;

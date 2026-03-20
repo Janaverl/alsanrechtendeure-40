@@ -1,3 +1,11 @@
+@font-face {
+  font-family: logoFont;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/Abhaya_Libre/AbhayaLibre-Regular.ttf);
+}
 body {
   background-color: #ececec;
   color: #AD1457;
@@ -9,13 +17,13 @@ h1, h2, h3, h4, h5, h6 {
 
 body > * {
   color: #1f2937;
-  font-family: "Abhaya Libre", serif;
+  font-family: mainFont;
   letter-spacing: 2px;
 }
 
 h1 {
   color: #AD1457;
-  font-family: "Poppins", cursive;
+  font-family: logoFont;
   font-size: 44px;
 }
 @media (min-width: 1900px) {
@@ -45,7 +53,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Poppins", cursive;
+  font-family: logoFont;
   font-size: 25px;
   font-weight: 400;
 }
