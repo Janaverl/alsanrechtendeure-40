@@ -24,9 +24,9 @@ body > * {
 h1 {
   color: #AD1457;
   font-family: logoFont;
-  font-size: 33px;
+  font-size: 30px;
 }
-@media (min-width: 1900px) {
+@media (min-width: 1200px) {
   h1 {
     font-size: 55px;
   }

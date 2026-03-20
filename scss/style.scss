@@ -20,8 +20,8 @@ body > *{
 h1{
     color: $red;
     font-family: $logofont;
-    font-size: 33px;
-    @include for-size(big-screen){
+    font-size: 30px;
+    @include for-size(laptop-up){
         font-size: 55px;
     }
     font-weight: 400;
