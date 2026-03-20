@@ -1,0 +1,275 @@
+@import "./_mediaResponsive.scss";
+@import "./_fontsAndCollors.scss";
+
+body{
+    background-color: $backgroundGrey;
+    color: $red;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+// fonts, font sizes and colors
+body > *{
+    color: $black;
+    font-family: $font;
+    letter-spacing: 2px;
+}
+
+h1{
+    color: $red;
+    font-family: $logofont;
+    font-size: 44px;
+    @include for-size(big-screen){
+        font-size: 66px;
+    }
+    font-weight: 400;
+}
+
+h2{
+    font-size: 40px;
+    @include for-size(big-screen){
+        font-size: 64px;
+    }
+    font-weight: 800;
+}
+
+h3{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+h4{
+    font-family: $logofont;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+h5{
+    font-size: 16px;
+    @include for-size(big-screen){
+        font-size: 20px;
+    }
+    font-weight: 400;
+}
+
+h6{
+    color: $red;
+    text-transform: uppercase;
+    font-size: 12px;
+    @include for-size(big-screen){
+        font-size: 16px;
+    }
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.subtitle{
+    font-size: 24px;
+    @include for-size(big-screen){
+        font-size: 36px;
+    }
+    font-weight: 800;
+    font-weight: 400;
+    margin: 0;
+}
+
+nav li a{
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 26px;
+}
+
+i.fab{
+    font-size: 20px;
+}
+
+.summary li{
+    font-size: 12px;
+    @include for-size(big-screen){
+        font-size: 14px;
+    }
+}
+
+p, label{
+    font-size: 17px;
+    @include for-size(big-screen){
+        font-size: 20px;
+    }
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+.privacyPolicy p{
+    font-size: 14px;
+}
+
+button{
+    background-color: $red;
+    color: $white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+// end of fonts, font sizes and colors
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.inside{
+    margin: 0 auto;
+    width: 90vw;
+    @include for-size(tablet-portrait-up){
+        width: 80vw;
+    }
+    @include for-size(tablet-landscape-up){
+        width: 80vw
+    }
+    @include for-size(laptop-up){
+        width: 80vw;
+    }
+}
+
+// -----------
+// logo and subtitle
+// -----------
+
+.subtitle{
+    position: relative;
+}
+
+.subtitle:after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    width: 95px;
+    border: solid 2px $black;
+}
+
+// -----------
+// navigation
+// -----------
+.nav{
+    min-height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    > div{
+        margin: 30px 0;
+    }
+    nav{
+        position: relative;
+        .hamburger, .navbar{
+            list-style-type: none;
+            padding: 0;
+            > li{
+                padding: 20px;
+            }
+        }
+        // start of the mobile hamburger menu
+        .navbar{
+            color: $white;
+            margin: 0;
+            z-index: 1000;
+            background: rgba($red, 0.8);
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .socials{
+                > span{
+                    padding: 20px;
+                }
+            }
+            transition: transform 500ms ease;
+            transform: translateX(100%);
+        }
+        .open {
+            transform: translateX(0);
+        }
+        // end of the mobile hamburger menu
+    }
+
+    // reset the values of the mobile navbar
+    @include for-size(tablet-landscape-up){
+        color: $black;
+        > div, > nav{
+            width: 50%;       
+        }
+        .hamburger{
+            display: none;
+            width: 0;
+        }
+        nav > .navbar{
+            color: $black;
+            transform: none;
+            position: relative;
+            background: none;
+            height: initial;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-top: 20px;
+            >li{
+                padding: 20px 0 0 20px;
+            }
+            a:hover{
+                color: $red;
+            }   
+            .socials{
+                > span{
+                    padding: 0;
+                }
+            }
+        } 
+    }   
+}
+// -----------
+// footer
+// -----------
+
+footer{
+    background-color: $red;
+    color: white;
+    p{
+        text-align: center;
+        margin: 0 auto;
+        padding: 50px;
+    }
+}
+
+
+// -----------
+// goUp
+// -----------
+
+.goUp{
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-size: 50px;
+    display: none;
+    cursor: pointer;
+    i{
+        text-shadow: 2px 6px 8px black;
+    }
+}

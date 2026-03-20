@@ -1,0 +1,297 @@
+@import "./_mediaResponsive.scss";
+@import "./_fontsAndCollors.scss";
+
+// -----------
+// hero
+// -----------
+
+@mixin hero-image($img){
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    min-height: 75vh;
+    &:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background-image: $img;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.7;
+        box-shadow: 100vw 100vh 500px 100px rgba(black, 0.5) inset;
+
+    }
+}
+
+.hero{
+    @include hero-image(url("../img/bike.jpg"));
+}
+
+.hero .inside>div{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    @include for-size(laptop-up){
+        width: 66%;
+    }
+    color: $white;
+    z-index: 1;
+}
+
+// -----------
+// activities
+// -----------
+
+.activities .inside{
+    width: 80vw;
+    h2{
+        margin-top: 250px;
+        text-align: center;
+        margin-bottom: 125px;
+    }
+}
+
+.projectWrapper{
+        margin-bottom: 250px;
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+// box shadows for the projects
+@mixin shadow{
+    @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+            z-index: #{999-$i};
+            box-shadow: 30px 5px 20px 15px rgba(47, 44, 44, 0.15);
+        }
+        &:hover{
+            z-index: 1000;
+        }
+    }
+}
+
+div.project{
+    @include shadow;
+}
+// end of box shadows for the projects
+
+.project{
+    background-color: $bgTwo;
+    &.socialrun{
+        background-color: $bgTwo;
+    }
+    &.break{
+        background-color: $bgTwo;
+    }
+    &.food{
+        background-color: $bgTwo;
+    }
+    .content{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+    .discription{
+        margin: 40px 30px 30px 30px;
+        display: flex;
+        justify-content: space-between;
+        .summary{
+            .title{
+                min-height: 150px;
+            }
+            h4{
+                margin-bottom: 15px;
+            }
+            h5{
+                margin-bottom: 15px;
+            }
+            ul{
+                list-style-type: none;
+                padding: 0;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .projectimage{
+        width: 100%;
+        padding-top: 100%; /* 1:1 Aspect Ratio */
+
+        color: $white;
+        position: relative;
+        z-index: 1;
+        background-position: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        
+        .callToAction{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            z-index: 3;
+            margin: 0 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            p{
+                margin-top: 70px;
+            }
+            button{
+                width: 50%;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+// backgroundImgs for the different projects
+@mixin backgroundimg($img){
+    &:after{
+        position: absolute;
+        content: "";
+        top: 2.5%;
+        left: 2.5%;
+        width: 95%;
+        height: 95%;
+        z-index: 2;
+        background-image: $img;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 100vw 100vh 500px 100px rgba($black, 0.7) inset;
+    }
+}
+
+.socialrun.one .projectimage{
+    @include backgroundimg(url("../img/socialrun.jpg"));
+}
+
+.socialrun.two .projectimage{
+    @include backgroundimg(url("../img/runner.jpg"));
+}
+
+.socialrun.three .projectimage{
+    @include backgroundimg(url("../img/socialrun.jpg"));
+}
+
+.socialrun.four .projectimage{
+    @include backgroundimg(url("../img/runner2.jpg"));
+}
+
+.socialride .projectimage{
+    @include backgroundimg(url("../img/bike2.jpg"));
+}
+
+.socialwalk .projectimage{
+    @include backgroundimg(url("../img/walk.jpg"));
+}
+
+.break.one .projectimage{
+    @include backgroundimg(url("../img/break.jpg"));
+}
+
+.break.two .projectimage{
+    @include backgroundimg(url("../img/ijs.jpg"));
+}
+
+.food.potluck .projectimage{
+    @include backgroundimg(url("../img/praline.jpg"));
+}
+
+.food.lunch .projectimage{
+    @include backgroundimg(url("../img/picknick.jpg"));
+}
+
+.food.diner .projectimage{
+    @include backgroundimg(url("../img/food.jpg"));
+}
+
+.end .projectimage{
+    @include backgroundimg(url("../img/look.jpg"));
+}
+
+// end of backgroundImgs for the different projects
+
+// -----------
+// about
+// -----------
+
+.about{
+    &#bigrun{
+        background-color: $brown;
+        .inside{
+            color: $white;
+        }
+    }
+    &#where{
+        @include hero-image(url("../img/campagne.jpg"));
+
+        .inside{
+            color: bisque;
+        }
+    }
+    &#practical{
+        background-color: $white;
+        .inside{
+            color: $brown;
+        }
+    }
+    .inside{
+        padding-top: 90px;
+        padding-bottom: 140px;
+        @include for-size(tablet-landscape-up){
+            display: flex;
+            justify-content: space-between;
+            .intro, .what{
+                width: 55%;
+            }
+            .komoot, .where{
+                width: 40%;
+            }
+            // .likes{
+            //     width: 35%;
+            //     & > h3:nth-child(4) {
+            //         margin-top: 40px;
+            //     }
+            // }
+        }
+        h2{
+            margin-bottom: 60px;
+        }
+        h3{
+            margin-bottom: 40px;
+            margin-top: 60px;
+        }
+        @include for-size(tablet-landscape-up){
+            h3:first-child{
+                margin-top: 0px;
+            }
+        }
+        // i{
+        //     display: inline;
+        //     text-align: center;
+        //     font-size: 50px;
+        // }
+    }
+    .likesWrapper{
+        display: flex;
+        justify-content: space-between;
+        >div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
